@@ -1,5 +1,6 @@
 import com.gridnine.testing.*;
 
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class Main {
@@ -24,7 +25,9 @@ public class Main {
         System.out.println("\nПерелёты с временем на земле более двух часов:");
         List<Flight> filteredFlights3 = new GroundTimeExceedsTwoHoursFilter().filter(flights);
         printFlights(filteredFlights3);
+
     }
+
 
     private static void printFlights(List<Flight> flights) {
         if (flights.isEmpty()) {
@@ -32,15 +35,19 @@ public class Main {
             return;
         }
 
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+
         for (int i = 0; i < flights.size(); i++) {
             System.out.println("Перелёт " + (i + 1) + ":");
             for (Segment segment : flights.get(i).getSegments()) {
-                System.out.println("  Вылет: " + segment.getDepartureDate());
-                System.out.println("  Прилет: " + segment.getArrivalDate());
+                System.out.println("  Вылет: " + segment.getDepartureDate().format(formatter));
+                System.out.println("  Прилет: " + segment.getArrivalDate().format(formatter));
             }
             System.out.println();
         }
     }
+
+
 
 
 }
