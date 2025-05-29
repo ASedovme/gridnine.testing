@@ -4,8 +4,16 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Класс для создания тестовых данных — рейсов с различными сценариями.
+ */
 public class FlightBuilder {
 
+    /**
+     * Создает список тестовых рейсов с разными характеристиками для проверки фильтров.
+     *
+     * @return список объектов Flight с подготовленными сегментами
+     */
     public static List<Flight> createFlights() {
         List<Flight> flights = new ArrayList<>();
 

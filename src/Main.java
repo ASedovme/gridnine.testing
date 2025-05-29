@@ -3,7 +3,16 @@ import com.gridnine.testing.*;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
+/**
+ * Главный класс для запуска тестирования фильтров и отображения результатов.
+ */
 public class Main {
+
+    /**
+     * Точка входа в программу. Создает список рейсов, применяет фильтры и выводит результаты.
+     *
+     * @param args аргументы командной строки (не используются)
+     */
     public static void main(String[] args) {
         System.out.println("Hello, Flight!");
 
@@ -28,7 +37,11 @@ public class Main {
 
     }
 
-
+    /**
+     * Выводит список рейсов в консоль в удобочитаемом формате.
+     *
+     * @param flights список рейсов для отображения
+     */
     private static void printFlights(List<Flight> flights) {
         if (flights.isEmpty()) {
             System.out.println("Нет подходящих перелётов.");
